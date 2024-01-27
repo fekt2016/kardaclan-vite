@@ -29,6 +29,7 @@ const Input = styled.input`
   text-transform: capitalize;
   border-radius: 10px;
   border: none;
+  color: var(--color-black-900);
 `
 const Button = styled.button`
   background-color: var(--color-black-900);
