@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { devicesMax } from '../styles/BreakPoint'
 
 const StyledNavList = styled.ul`
   height: 100%;
@@ -9,6 +10,10 @@ const StyledNavList = styled.ul`
   display: flex;
   justify-content: end;
   align-items: center;
+
+  @media ${devicesMax.md} {
+    display: none;
+  }
 `
 const NavItem = styled.li`
   height: 100%;
@@ -32,9 +37,6 @@ function NavList() {
       </NavItem>
       <NavItem>
         <Link>agents</Link>
-      </NavItem>
-      <NavItem>
-        <Link>services</Link>
       </NavItem>
       <NavItem>
         <Link>about Us</Link>
