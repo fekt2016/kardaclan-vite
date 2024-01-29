@@ -87,7 +87,7 @@ const IntouchLink = styled(Link)`
 
   &:hover {
     color: var(--color-facebook-900);
-    transform: scale(1.5);
+    transform: scale(1.1);
   }
 `
 

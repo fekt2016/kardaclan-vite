@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react'
+/* eslint react/prop-types: 0 */
+
+import { useEffect } from 'react'
 import styled, { keyframes } from 'styled-components'
 
 const fadeIn = keyframes`
@@ -18,9 +20,7 @@ const Img = styled.img`
   height: 100%;
   filter: brightness(50%);
 `
-function Background() {
-  const [count, setCount] = useState(0)
-
+function Background({ count, setCount }) {
   useEffect(() => {
     setInterval(() => {
       setCount((count) => {

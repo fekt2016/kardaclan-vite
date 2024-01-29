@@ -18,6 +18,15 @@ const GlobalStyles = createGlobalStyle`:root {
   --color-youtube-500:#EB7978;
   --color-tiktok-500:#7bfffb;
 
+--color-grey-900:#333;
+--color-grey-800:#565656;
+--color-grey-700:#6f6f6f;
+--color-grey-500:#a2a2a2;
+--color-grey-400:#cdcdcd;
+--color-grey-300:#e6e6e6;
+--color-grey-200:#efefef;
+--color-grey-100:#f7f7f7;
+
 
 
 

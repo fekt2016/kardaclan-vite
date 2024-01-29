@@ -1,6 +1,8 @@
+/* eslint react/prop-types: 0 */
 import styled from 'styled-components'
 import Heading from '../../ui/Heading'
 import { devicesMax } from '../../styles/BreakPoint'
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
 const StyledContent = styled.div`
   width: 100%;
@@ -41,13 +43,43 @@ const Button = styled.button`
   right: 1rem;
   top: 0.8rem;
 `
+const ArrowBox = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem;
+`
+const BackIcon = styled(IoIosArrowBack)`
+  font-size: 5rem;
+  cursor: pointer;
+`
+const ForwardIcon = styled(IoIosArrowForward)`
+  font-size: 5rem;
+  cursor: pointer;
+`
 
-function TextField() {
+function TextField({ count, setCount }) {
   return (
     <StyledContent>
       <div>
         <Heading as="h1">Your Next home is here</Heading>
       </div>
+      <ArrowBox>
+        <BackIcon
+          onClick={() => {
+            const firstCount = count === 0
+            const newCount = firstCount ? 3 - 1 : count - 1
+            setCount(newCount)
+          }}
+        />
+        <ForwardIcon
+          onClick={() => {
+            const lastCount = count === 3 - 1
+            const newCount = lastCount ? 0 : count + 1
+            setCount(newCount)
+          }}
+        />
+      </ArrowBox>
       <InputBox>
         <Input type="search" placeholder="enter location"></Input>
         <Button>&rarr;</Button>
