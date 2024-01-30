@@ -4,6 +4,13 @@ const GlobalStyles = createGlobalStyle`:root {
   /* Indigo */
 
 --color-black-900: #000000;
+--color-black-800: #151a1a;
+--color-black-700: #242d2d;
+--color-black-600: #2c3636;
+--color-black-500: #3b4949;
+--color-black-400: #607979;
+
+
 --color-white-900: #ffffff;
 
 
@@ -26,8 +33,6 @@ const GlobalStyles = createGlobalStyle`:root {
 --color-grey-300:#e6e6e6;
 --color-grey-200:#efefef;
 --color-grey-100:#f7f7f7;
-
-
 
 
 

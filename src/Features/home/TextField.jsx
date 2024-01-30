@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Heading from '../../ui/Heading'
 import { devicesMax } from '../../styles/BreakPoint'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+import { Link } from 'react-router-dom'
 
 const StyledContent = styled.div`
   width: 100%;
@@ -41,7 +42,7 @@ const Button = styled.button`
   border: none;
   position: absolute;
   right: 1rem;
-  top: 0.8rem;
+  top: 5.1rem;
 `
 const ArrowBox = styled.div`
   width: 100%;
@@ -56,6 +57,12 @@ const BackIcon = styled(IoIosArrowBack)`
 const ForwardIcon = styled(IoIosArrowForward)`
   font-size: 5rem;
   cursor: pointer;
+`
+const Nav = styled.nav`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
 `
 
 function TextField({ count, setCount }) {
@@ -80,7 +87,13 @@ function TextField({ count, setCount }) {
           }}
         />
       </ArrowBox>
+
       <InputBox>
+        <Nav>
+          <Link>Sell</Link>
+          <Link>Buy</Link>
+          <Link>Rent</Link>
+        </Nav>
         <Input type="search" placeholder="enter location"></Input>
         <Button>&rarr;</Button>
       </InputBox>

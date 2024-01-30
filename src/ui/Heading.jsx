@@ -20,7 +20,7 @@ const Heading = styled.h1`
   ${(props) =>
     props.as === 'h2' &&
     css`
-      font-size: 3rem;
+      font-size: 4rem;
 
       @media ${devicesMax.md} {
         font-size: 2rem;
@@ -29,5 +29,17 @@ const Heading = styled.h1`
         font-size: 1.5rem;
       }
     `}
+    ${(props) =>
+      props.as === 'h3' &&
+      css`
+        font-size: 7rem;
+
+        @media ${devicesMax.md} {
+          font-size: 2rem;
+        }
+        @media ${devicesMax.sm} {
+          font-size: 1.5rem;
+        }
+      `}
 `
 export default Heading

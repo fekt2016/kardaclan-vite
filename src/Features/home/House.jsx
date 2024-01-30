@@ -22,6 +22,8 @@ const dataList = [
     sqft: '4,069 SQFT.',
     images: [],
     family: 'single family',
+    amenities:
+      'Air conditioning,Cooker,Fans,Garden Garage, Annexe (Boys quarter),Water reservoir,Swimming pool',
   },
   {
     id: '002',
@@ -38,6 +40,8 @@ const dataList = [
     sqft: '2,069 SQFT.',
     images: [],
     family: 'single family',
+    amenities:
+      'Air conditioning,Cooker,Fans,Garden Garage, Annexe (Boys quarter),Water reservoir,Swimming pool',
   },
   {
     id: '003',
@@ -54,12 +58,14 @@ const dataList = [
     sqft: '4,969 SQFT.',
     images: [],
     family: 'single family',
+    amenities:
+      'Air conditioning,Cooker,Fans,Garden Garage, Annexe (Boys quarter),Water reservoir,Swimming pool',
   },
   {
     id: '004',
     estate: 'stonebridge Estates',
     HouseNo: '001',
-    status: 'completed',
+    status: 'umcompleted',
     price: '500,000',
     bed: 2,
     bath: 3,
@@ -70,6 +76,8 @@ const dataList = [
     sqft: '5,769 SQFT.',
     images: [],
     family: 'single family',
+    amenities:
+      'Air conditioning,Cooker,Fans,Garden Garage, Annexe (Boys quarter),Water reservoir,Swimming pool',
   },
   {
     id: '005',
@@ -86,6 +94,8 @@ const dataList = [
     sqft: '1,069 SQFT.',
     images: [],
     family: 'single family',
+    amenities:
+      'Air conditioning,Cooker,Fans,Garden Garage, Annexe (Boys quarter),Water reservoir,Swimming pool',
   },
   {
     id: '006',
@@ -102,6 +112,8 @@ const dataList = [
     sqft: '4,789 SQFT.',
     images: [],
     family: 'single family',
+    amenities:
+      'Air conditioning,Cooker,Fans,Garden Garage, Annexe (Boys quarter),Water reservoir,Swimming pool',
   },
   {
     id: '007',
@@ -118,12 +130,14 @@ const dataList = [
     sqft: '3,000 SQFT.',
     images: [],
     family: 'single family',
+    amenities:
+      'Air conditioning,Cooker,Fans,Garden Garage, Annexe (Boys quarter),Water reservoir,Swimming pool',
   },
   {
     id: '008',
     estate: 'north celebraties Estate',
     HouseNo: '001',
-    status: 'completed',
+    status: 'uncompleted',
     price: '2,500,000',
     bed: 2,
     bath: 3,
@@ -133,7 +147,8 @@ const dataList = [
       'Spacious three-story home with open-plan living spaces, perfect for large households. Five bedrooms and 4.5 bathrooms, including a main floor guest suite and upper floor en suite. Main floor with open-plan living room, dining room, and kitchen areas, mud room, tech zone, and pantry for additional storage. Second floor with four bedrooms including a vast master bedroom with en suite bath and two walk-in closets. Spacious attic recreation room with bathroom, great for extra entertainment space. Covered patio for cozy evenings dining or lounging outdoors.',
     sqft: '5,000 SQFT.',
     images: [],
-    family: 'single family',
+    amenities:
+      'Air conditioning,Cooker,Fans,Garden Garage, Annexe (Boys quarter),Water reservoir,Swimming pool',
   },
 ]
 const CardContainer = styled.div`
