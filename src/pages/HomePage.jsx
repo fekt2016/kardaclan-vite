@@ -3,6 +3,7 @@ import House from '../Features/home/House'
 import Area from '../Features/home/Area'
 import KaHill from '../Features/home/KaHill'
 import AboutUs from '../Features/home/AboutUs'
+import Services from '../Features/home/Services'
 
 const Main = styled.main`
   padding: 1rem;
@@ -15,6 +16,7 @@ function HomePage() {
       <KaHill />
       <Area />
       <AboutUs />
+      <Services />
     </Main>
   )
 }

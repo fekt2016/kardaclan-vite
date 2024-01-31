@@ -4,10 +4,9 @@ import Heading from '../../ui/Heading'
 import { devicesMax } from '../../styles/BreakPoint'
 
 const Container = styled.div`
-  height: 120rem;
   display: flex;
   padding: 4rem;
-  gap: 20px;
+  gap: 30px;
 
   @media ${devicesMax.md} {
     flex-direction: column;
@@ -23,6 +22,9 @@ const LeftBox = styled.div`
 `
 const RightBox = styled.div`
   flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
   &:not(:last-child) {
     margin-bottom: 2rem;
@@ -30,21 +32,19 @@ const RightBox = styled.div`
 `
 
 const ImgBox = styled.div`
-  height: ${(props) => props.height};
-  background-image: ${(props) => `url(${props.background})`};
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
 
   &:not(:last-child) {
     margin-bottom: 2rem;
   }
 `
+const RightImgBox = styled.div`
+  height: 50%;
+  position: relative;
+`
 const AboutCard = styled.div`
   padding: 1rem;
   width: 60%;
-  /* height: 50%; */
   background-color: var(--color-white-900);
   position: absolute;
   right: 1rem;
@@ -77,6 +77,10 @@ const P = styled.p`
     font-size: 1.3rem;
   }
 `
+const Img = styled.img`
+  height: 100%;
+  width: 100%;
+`
 function AboutUs() {
   return (
     <Section type="about">
@@ -90,14 +94,16 @@ function AboutUs() {
               Move with the relentless agents of the Brand on your side.
             </p>
           </HeadingBox>
-          <ImgBox height="35%" background="../../../house908876.jpg">
+          <ImgBox>
+            <Img src="../../../house0900.jpeg" alt="" />
             <AboutCard>
               <Heading as="h4">Luxury</Heading>
               <p>Explore featured luxury homes & Estates.</p>
               <Button>Visit Ka hills</Button>
             </AboutCard>
           </ImgBox>
-          <ImgBox height="35%" background="../../../house090988.jpg">
+          <ImgBox>
+            <Img src="../../../house44.jpeg" alt="" />
             <AboutCard>
               <Heading as="h4">Commercial</Heading>
               <P>
@@ -109,7 +115,8 @@ function AboutUs() {
           </ImgBox>
         </LeftBox>
         <RightBox>
-          <ImgBox height="50%" background="../../../House6.jpg">
+          <RightImgBox>
+            <Img src="../../../House1.jpg" alt="" />
             <AboutCard>
               <Heading as="h4">GLOBAL</Heading>
               <P>
@@ -118,18 +125,19 @@ function AboutUs() {
               </P>
               <Button>Visit Ka Global</Button>
             </AboutCard>
-          </ImgBox>
+          </RightImgBox>
 
-          <ImgBox height="50%" background="../../../house77.jpeg">
+          <RightImgBox>
+            <Img src="../../../house090988.jpg" alt="" />
             <AboutCard>
-              <Heading as="h4">accra</Heading>
+              <Heading as="h4">Accra</Heading>
               <P>
                 Buscar CENTURY 21 Español para encontrar propiedades de bienes
                 raíces, casas en venta y agentes de bienes raíces.
               </P>
               <Button>Visit Ka accra </Button>
             </AboutCard>
-          </ImgBox>
+          </RightImgBox>
         </RightBox>
       </Container>
     </Section>

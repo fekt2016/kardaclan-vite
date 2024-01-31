@@ -1,37 +1,9 @@
 import { Link } from 'react-router-dom'
-import styled, { css } from 'styled-components'
-import {
-  FaFacebook,
-  FaTwitter,
-  FaTiktok,
-  FaYoutube,
-  FaPhone,
-} from 'react-icons/fa'
+import styled from 'styled-components'
+import { FaPhone } from 'react-icons/fa'
 import { IoMailUnread } from 'react-icons/io5'
 import { devicesMax } from '../styles/BreakPoint'
-
-const StyledIcon = css`
-  font-size: 1.6rem;
-  color: var(--color-white-900);
-  transition: all 0.4s;
-
-  &:hover {
-    color: ${(props) => `var(${props.iconcolor})`};
-    transform: scale(1.5);
-  }
-`
-const FacebookIcon = styled(FaFacebook)`
-  ${StyledIcon}
-`
-const TwitterIcon = styled(FaTwitter)`
-  ${StyledIcon}
-`
-const YoutubeIcon = styled(FaYoutube)`
-  ${StyledIcon}
-`
-const TiktokIcon = styled(FaTiktok)`
-  ${StyledIcon}
-`
+import Icon from './Icon'
 
 const StyledSocial = styled.div`
   height: 4rem;
@@ -48,18 +20,6 @@ const StyledSocial = styled.div`
   }
 `
 
-const StyledIconBox = styled.div`
-  flex-basis: 15%;
-  height: 100%;
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  @media ${devicesMax.md} {
-    flex-basis: 30%;
-  }
-`
 const StyledCont = styled.div`
   color: var(--color-white-900);
 
@@ -97,24 +57,11 @@ const PhoneIcon = styled(FaPhone)`
 const MailIcon = styled(IoMailUnread)`
   margin-right: 0.8rem;
 `
-const IconLink = styled(Link)``
+
 function Social() {
   return (
     <StyledSocial>
-      <StyledIconBox>
-        <IconLink>
-          <FacebookIcon iconcolor="--color-facebook-900" />
-        </IconLink>
-        <Link>
-          <TwitterIcon iconcolor="--color-twitter-900" />
-        </Link>
-        <Link>
-          <TiktokIcon iconcolor="--color-tiktok-900" />
-        </Link>
-        <Link>
-          <YoutubeIcon iconcolor="--color-youtube-900" />
-        </Link>
-      </StyledIconBox>
+      <Icon />
       <StyledCont>
         <IntouchLink>
           <MailIcon />

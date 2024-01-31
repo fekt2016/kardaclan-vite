@@ -48,13 +48,21 @@ const SignLink = styled(Link)`
   background-color: var(--color-black-900);
   color: var(--color-white-900);
 `
+const Nav = styled.div`
+  @media ${devicesMax.md} {
+    display: none;
+  }
+`
 function NavBar() {
   return (
     <StyledNav>
       <Social />
       <StyledMainNav>
         <div>Logo</div>
-        <NavList />
+        <Nav>
+          <NavList />
+        </Nav>
+
         <StyledLog>
           <LogLink>Login</LogLink>
           <SignLink>Sign Up</SignLink>

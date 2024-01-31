@@ -41,5 +41,11 @@ const Heading = styled.h1`
           font-size: 1.5rem;
         }
       `}
+
+      ${(props) =>
+        props.as === 'h4' &&
+        css`
+          font-size: 3rem;
+        `}
 `
 export default Heading

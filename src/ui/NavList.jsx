@@ -10,9 +10,8 @@ const StyledNavList = styled.ul`
   display: flex;
   justify-content: end;
   align-items: center;
-
   @media ${devicesMax.md} {
-    display: none;
+    margin-right: 15px;
   }
 `
 const NavItem = styled.li`
@@ -22,6 +21,10 @@ const NavItem = styled.li`
 
   display: flex;
   align-items: center;
+
+  @media ${devicesMax.md} {
+    font-size: 1.1rem;
+  }
 `
 function NavList() {
   return (
