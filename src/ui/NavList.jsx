@@ -30,22 +30,22 @@ function NavList() {
   return (
     <StyledNavList>
       <NavItem>
-        <Link>buy</Link>
+        <Link to="buy">buy</Link>
       </NavItem>
       <NavItem>
-        <Link>rent</Link>
+        <Link to="rent">rent</Link>
       </NavItem>
       <NavItem>
-        <Link>sell</Link>
+        <Link to="sell">sell</Link>
       </NavItem>
       <NavItem>
-        <Link>agents</Link>
+        <Link to="agents">agents</Link>
       </NavItem>
       <NavItem>
-        <Link>about Us</Link>
+        <Link to="about">about Us</Link>
       </NavItem>
       <NavItem>
-        <Link>Contact</Link>
+        <Link to="contact">Contact</Link>
       </NavItem>
     </StyledNavList>
   )

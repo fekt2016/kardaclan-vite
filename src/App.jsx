@@ -3,11 +3,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import AppLayout from './pages/AppLayout'
 import HomePage from './pages/HomePage'
 import AboutUs from './pages/AboutUs'
-import Service from './pages/Service'
-import Blog from './pages/Blog'
 import Contact from './pages/Contact'
-import Property from './pages/Property'
-import ProPage from './pages/ProPage'
+import ProPage from './pages/Buy'
+import Buy from './pages/Buy'
+import Sell from './pages/Sell'
+import Rents from './pages/Rents'
+import Agents from './pages/Agents'
 
 function App() {
   return (
@@ -17,11 +18,12 @@ function App() {
         <Routes>
           <Route path="/" element={<AppLayout />}>
             <Route index element={<HomePage />} />
-            <Route path="aboutUs" element={<AboutUs />} />
-            <Route path="service" element={<Service />} />
-            <Route path="blog" element={<Blog />} />
+            <Route path="about" element={<AboutUs />} />
+            <Route path="Rent" element={<Rents />} />
+            <Route path="Agents" element={<Agents />} />
+            <Route path="sell" element={<Sell />} />
             <Route path="contact" element={<Contact />} />
-            <Route path="properties" element={<Property />} />
+            <Route path="buy" element={<Buy />} />
             <Route path="property/:pro" element={<ProPage />} />
           </Route>
         </Routes>
