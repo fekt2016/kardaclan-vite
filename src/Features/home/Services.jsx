@@ -49,7 +49,7 @@ function Services() {
     <Section>
       <Container>
         <LeftBox>
-          <img src="../../../public/House6.jpg" />
+          <img src="../../../House6.jpg" />
         </LeftBox>
         <RightBox>
           <HeadingBox>

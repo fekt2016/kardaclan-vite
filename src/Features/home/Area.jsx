@@ -56,23 +56,23 @@ function Area() {
         </HeadingBox>
         <AreaBox>
           <AreaCard>
-            <img src="../../../public/airport.webp" alt="area1" />
+            <img src="../../../airport.webp" alt="area1" />
             <span>Airport resident</span>
           </AreaCard>
           <AreaCard>
-            <img src="../../../public/Dzorwulu.webp" alt="area1" />
+            <img src="../../../Dzorwulu.webp" alt="area1" />
             <span>dzorwulu</span>
           </AreaCard>
           <AreaCard>
-            <img src="../../../public/cont.jpeg" alt="area1" />
+            <img src="../../../cont.jpeg" alt="area1" />
             <span>cantonment</span>
           </AreaCard>
           <AreaCard>
-            <img src="../../../public/eastlegon.webp" alt="area1" />
+            <img src="../../../eastlegon.webp" alt="area1" />
             <span>easy legon</span>
           </AreaCard>
           <AreaCard>
-            <img src="../../../public/Lashibi3.jpeg" alt="area1" />
+            <img src="../../../Lashibi3.jpeg" alt="area1" />
             <span>lashibi</span>
           </AreaCard>
         </AreaBox>
