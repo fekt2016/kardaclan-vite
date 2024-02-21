@@ -1,34 +1,38 @@
-import styled from 'styled-components'
+/* eslint react/prop-types: 0 */
+import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
 import { devicesMax } from '../styles/BreakPoint'
 
 const StyledNavList = styled.ul`
   height: 100%;
-  flex: 1;
+  padding: 0 1rem;
+  margin-top: 1rem;
 
-  margin-right: 20px;
   display: flex;
-  justify-content: end;
   align-items: center;
-  @media ${devicesMax.md} {
-    margin-right: 15px;
-  }
+  justify-content: center;
+
+  color: ${(props) => (props.type === 'mini' ? 'white' : 'black')};
+
+  ${(props) =>
+    props.type === 'mini' &&
+    css`
+      flex-direction: column;
+      background-color: var(--color-black-900);
+    `}
 `
 const NavItem = styled.li`
-  height: 100%;
+  padding: 0.5rem 1rem;
   margin-right: 30px;
   text-transform: capitalize;
-
-  display: flex;
-  align-items: center;
 
   @media ${devicesMax.md} {
     font-size: 1.1rem;
   }
 `
-function NavList() {
+function NavList({ type }) {
   return (
-    <StyledNavList>
+    <StyledNavList type={type}>
       <NavItem>
         <Link to="buyhomes">buy</Link>
       </NavItem>

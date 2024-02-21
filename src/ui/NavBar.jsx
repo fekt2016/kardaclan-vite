@@ -1,16 +1,23 @@
 import styled from 'styled-components'
 
-import { Link } from 'react-router-dom'
-import NavList from '../ui/NavList'
 import Social from './Social'
 import { devicesMax } from '../styles/BreakPoint'
+import Nav from '../Features/home/Nav'
+import { HiMiniXMark, HiOutlineBars3BottomRight } from 'react-icons/hi2'
+import { useState } from 'react'
+import NavList from './NavList'
+
 const StyledNav = styled.nav`
   display: flex;
   flex-direction: column;
+
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 `
 const StyledMainNav = styled.div`
-  height: 5rem;
-  padding: 0 6rem;
+  padding: 1rem 6rem;
 
   display: flex;
   justify-content: space-between;
@@ -27,46 +34,63 @@ const StyledMainNav = styled.div`
     font-size: 1rem;
   }
 `
+const IconCross = styled(HiOutlineBars3BottomRight)`
+  font-size: 3rem;
+  color: var(--color-primary-900);
+  display: none;
+  @media ${devicesMax.md} {
+    display: block;
+  }
+`
+const IconMenu = styled(HiMiniXMark)`
+  font-size: 3rem;
+  color: var(--color-primary-900);
+  display: none;
+  z-index: 10000;
+  @media ${devicesMax.md} {
+    display: block;
+  }
+`
+const StyledMinNav = styled.nav`
+  position: absolute;
+  top: 7rem;
+  left: 0;
+  width: 100vw;
+  opacity: ${(props) => (props.show ? 1 : 0)};
+  visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
+  height: 30rem;
+  transition: all 0.5s;
+  z-index: 10;
+`
 
-const StyledLog = styled.div`
-  height: 100%;
+const Img = styled.img`
+  height: 5rem;
+`
+const LogoBox = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  flex-basis: 25%;
-
-  @media ${devicesMax.md} {
-    flex-basis: 60%;
-  }
-`
-const LogLink = styled(Link)`
-  border: 1px solid var(--color-black-900);
-  padding: 0.5rem 2rem;
-`
-const SignLink = styled(Link)`
-  padding: 0.5rem 2rem;
-  background-color: var(--color-black-900);
-  color: var(--color-white-900);
-`
-const Nav = styled.div`
-  @media ${devicesMax.md} {
-    display: none;
-  }
 `
 function NavBar() {
+  const [show, setShow] = useState(false)
+
   return (
     <StyledNav>
       <Social />
       <StyledMainNav>
-        <div>Logo</div>
-        <Nav>
-          <NavList />
-        </Nav>
-
-        <StyledLog>
-          <LogLink>Login</LogLink>
-          <SignLink>Sign Up</SignLink>
-        </StyledLog>
+        <LogoBox>
+          <Img src="../../edo.png" alt="logo" />
+        </LogoBox>
+        <Nav />
+        {!show ? (
+          <IconCross onClick={() => setShow(true)} />
+        ) : (
+          <IconMenu onClick={() => setShow(false)} />
+        )}
+        {show && (
+          <StyledMinNav show={show}>
+            <NavList type="mini" />
+          </StyledMinNav>
+        )}
       </StyledMainNav>
     </StyledNav>
   )
