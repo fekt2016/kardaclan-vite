@@ -12,6 +12,7 @@ const GlobalStyles = createGlobalStyle`:root {
 
 
 --color-white-900: #ffffff;
+--color-red-900: #FF0000;
 
 
   /* social */

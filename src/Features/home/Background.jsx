@@ -27,7 +27,7 @@ function Background({ count, setCount }) {
         return count === 2 ? 0 : count + 1
       })
     }, 6000)
-  }, [])
+  }, [setCount])
 
   if (count === 0) {
     return (

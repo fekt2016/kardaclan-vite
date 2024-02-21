@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 import Heading from '../../ui/Heading'
 import Section from '../../ui/Section'
-
-import { TbRulerMeasure } from 'react-icons/tb'
-import { FaCar, FaBath, FaBed, FaRegBuilding } from 'react-icons/fa'
+// import { TbRulerMeasure } from 'react-icons/tb'
+// import { FaCar, FaBath, FaBed, FaRegBuilding } from 'react-icons/fa'
 import { devicesMax } from '../../styles/BreakPoint'
+import HomesCard from '../../ui/HomesCard'
+import CardContainer from '../../ui/CardContainer'
 
 const dataList = [
   {
@@ -120,6 +121,7 @@ const dataList = [
     estate: 'north celebraties Estate',
     HouseNo: '001',
     status: 'completed',
+    type: 'sell',
     price: '1,550,000',
     bed: 5,
     bath: 4,
@@ -138,6 +140,7 @@ const dataList = [
     estate: 'north celebraties Estate',
     HouseNo: '001',
     status: 'uncompleted',
+    type: 'buy',
     price: '2,500,000',
     bed: 2,
     bath: 3,
@@ -151,72 +154,6 @@ const dataList = [
       'Air conditioning,Cooker,Fans,Garden Garage, Annexe (Boys quarter),Water reservoir,Swimming pool',
   },
 ]
-const CardContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-
-  @media ${devicesMax.lg} {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @media ${devicesMax.md} {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media ${devicesMax.sm} {
-    grid-template-columns: 1fr;
-  }
-`
-const Card = styled.div`
-  padding: 1rem;
-  background-color: var(--color-grey-200);
-  border-radius: 10px;
-  overflow: hidden;
-`
-const ImgBox = styled.div`
-  height: 200px;
-  padding: 2rem;
-  background-image: ${(props) => `url(${props.background})`};
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  display: flex;
-  align-items: flex-end;
-`
-const P = styled.p`
-  font-size: 2rem;
-  font-weight: 500;
-  font-family: 'Poppins' Arial, Helvetica, sans-serif;
-  text-transform: capitalize;
-  color: var(--color-white-900);
-`
-const StyledStatus = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-
-  span {
-    text-transform: capitalize;
-  }
-`
-const Price = styled.span`
-  font-size: 2rem;
-  font-weight: bold;
-`
-
-const StyledDetil = styled.div`
-  display: flex;
-  justify-content: space-around;
-  padding: 1rem;
-`
-const StyledTop = styled.div`
-  padding: 1rem;
-  display: flex;
-`
-const Button = styled.button`
-  padding: 0.2rem 1.5rem;
-  width: 100%;
-`
 
 const HeadingBox = styled.div`
   text-align: center;
@@ -249,43 +186,7 @@ function House() {
       </HeadingBox>
       <CardContainer>
         {dataList.map((item) => (
-          <Card key={item.id}>
-            <ImgBox background={item.cover}>
-              <P>{item.estate}</P>
-            </ImgBox>
-            <StyledTop>
-              <StyledStatus>
-                <span>{item.status}</span>
-                <Price>${item.price}</Price>
-              </StyledStatus>
-              <div>
-                <FaRegBuilding />
-              </div>
-            </StyledTop>
-            <StyledDetil>
-              <div>
-                <FaBed />
-                <div>
-                  {item.bed} <span>bed</span>
-                </div>
-              </div>
-              <div>
-                <FaBath />
-                <div>
-                  {item.bath} <span>bed</span>
-                </div>
-              </div>
-              <div>
-                <TbRulerMeasure />
-                <div>{item.sqft}</div>
-              </div>
-              <div>
-                <FaCar />
-                <div>{item.car}</div>
-              </div>
-            </StyledDetil>
-            <Button>Detail Info</Button>
-          </Card>
+          <HomesCard key={item.id} item={item} />
         ))}
       </CardContainer>
     </Section>

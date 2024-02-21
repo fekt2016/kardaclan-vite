@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import Background from '../../Features/home/Background'
-import TextField from '../../Features/home/TextField'
+import Background from '../Features/home/Background'
+import TextField from '../Features/home/TextField'
 import { useState } from 'react'
 
 const StyledHeader = styled.header`

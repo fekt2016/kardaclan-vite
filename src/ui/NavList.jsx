@@ -30,7 +30,7 @@ function NavList() {
   return (
     <StyledNavList>
       <NavItem>
-        <Link to="buy">buy</Link>
+        <Link to="buyhomes">buy</Link>
       </NavItem>
       <NavItem>
         <Link to="rent">rent</Link>

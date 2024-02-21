@@ -1,16 +1,14 @@
-import styled from 'styled-components'
-import CardContainer from '../ui/CardContainer'
+import { useParams } from 'react-router-dom'
 import HomesCard from '../ui/HomesCard'
-import Form from '../ui/Form'
-import Input from '../ui/Input'
-import Select from '../ui/Select'
+import CardContainer from '../ui/CardContainer'
+
 const dataList = [
   {
     id: '001',
+    type: 'buy',
     estate: 'lakeside estate',
     HouseNo: '001',
     status: 'completed',
-    type: 'buy',
     price: '950,000',
     bed: 2,
     bath: 3,
@@ -20,16 +18,17 @@ const dataList = [
       'Spacious three-story home with open-plan living spaces, perfect for large households. Five bedrooms and 4.5 bathrooms, including a main floor guest suite and upper floor en suite. Main floor with open-plan living room, dining room, and kitchen areas, mud room, tech zone, and pantry for additional storage. Second floor with four bedrooms including a vast master bedroom with en suite bath and two walk-in closets. Spacious attic recreation room with bathroom, great for extra entertainment space. Covered patio for cozy evenings dining or lounging outdoors.',
     sqft: '4,069 SQFT.',
     images: [],
+    loc: 'lakeside',
     family: 'single family',
     amenities:
       'Air conditioning,Cooker,Fans,Garden Garage, Annexe (Boys quarter),Water reservoir,Swimming pool',
   },
   {
     id: '002',
+    type: 'sell',
     estate: 'elegant homes',
     HouseNo: '001',
     status: 'completed',
-    type: 'buy',
     price: '750,000',
     bed: 4,
     bath: 4,
@@ -39,16 +38,17 @@ const dataList = [
       'Spacious three-story home with open-plan living spaces, perfect for large households. Five bedrooms and 4.5 bathrooms, including a main floor guest suite and upper floor en suite. Main floor with open-plan living room, dining room, and kitchen areas, mud room, tech zone, and pantry for additional storage. Second floor with four bedrooms including a vast master bedroom with en suite bath and two walk-in closets. Spacious attic recreation room with bathroom, great for extra entertainment space. Covered patio for cozy evenings dining or lounging outdoors.',
     sqft: '2,069 SQFT.',
     images: [],
+    loc: 'arminha',
     family: 'single family',
     amenities:
       'Air conditioning,Cooker,Fans,Garden Garage, Annexe (Boys quarter),Water reservoir,Swimming pool',
   },
   {
     id: '003',
+    type: 'rent',
     estate: 'unique homes',
     HouseNo: '001',
     status: 'completed',
-    type: 'buy',
     price: '3,650,000',
     bed: 3,
     bath: 3,
@@ -58,16 +58,17 @@ const dataList = [
       'Spacious three-story home with open-plan living spaces, perfect for large households. Five bedrooms and 4.5 bathrooms, including a main floor guest suite and upper floor en suite. Main floor with open-plan living room, dining room, and kitchen areas, mud room, tech zone, and pantry for additional storage. Second floor with four bedrooms including a vast master bedroom with en suite bath and two walk-in closets. Spacious attic recreation room with bathroom, great for extra entertainment space. Covered patio for cozy evenings dining or lounging outdoors.',
     sqft: '4,969 SQFT.',
     images: [],
+    loc: 'lakeside',
     family: 'single family',
     amenities:
       'Air conditioning,Cooker,Fans,Garden Garage, Annexe (Boys quarter),Water reservoir,Swimming pool',
   },
   {
     id: '004',
+    type: 'buy',
     estate: 'stonebridge Estates',
     HouseNo: '001',
     status: 'umcompleted',
-    type: 'buy',
     price: '500,000',
     bed: 2,
     bath: 3,
@@ -77,16 +78,17 @@ const dataList = [
       'Spacious three-story home with open-plan living spaces, perfect for large households. Five bedrooms and 4.5 bathrooms, including a main floor guest suite and upper floor en suite. Main floor with open-plan living room, dining room, and kitchen areas, mud room, tech zone, and pantry for additional storage. Second floor with four bedrooms including a vast master bedroom with en suite bath and two walk-in closets. Spacious attic recreation room with bathroom, great for extra entertainment space. Covered patio for cozy evenings dining or lounging outdoors.',
     sqft: '5,769 SQFT.',
     images: [],
+    loc: 'east legon hills',
     family: 'single family',
     amenities:
       'Air conditioning,Cooker,Fans,Garden Garage, Annexe (Boys quarter),Water reservoir,Swimming pool',
   },
   {
     id: '005',
+    type: 'sell',
     estate: 'hill Estates',
     HouseNo: '001',
     status: 'uncompleted',
-    type: 'buy',
     price: '250,000',
     bed: 2,
     bath: 4,
@@ -96,16 +98,17 @@ const dataList = [
       'Spacious three-story home with open-plan living spaces, perfect for large households. Five bedrooms and 4.5 bathrooms, including a main floor guest suite and upper floor en suite. Main floor with open-plan living room, dining room, and kitchen areas, mud room, tech zone, and pantry for additional storage. Second floor with four bedrooms including a vast master bedroom with en suite bath and two walk-in closets. Spacious attic recreation room with bathroom, great for extra entertainment space. Covered patio for cozy evenings dining or lounging outdoors.',
     sqft: '1,069 SQFT.',
     images: [],
+    loc: 'least legon hills',
     family: 'single family',
     amenities:
       'Air conditioning,Cooker,Fans,Garden Garage, Annexe (Boys quarter),Water reservoir,Swimming pool',
   },
   {
     id: '006',
+    type: 'rent',
     estate: 'harbour view Estates',
     HouseNo: '001',
     status: 'completed',
-    type: 'buy',
     price: '50,000',
     bed: 5,
     bath: 5,
@@ -115,16 +118,17 @@ const dataList = [
       'Spacious three-story home with open-plan living spaces, perfect for large households. Five bedrooms and 4.5 bathrooms, including a main floor guest suite and upper floor en suite. Main floor with open-plan living room, dining room, and kitchen areas, mud room, tech zone, and pantry for additional storage. Second floor with four bedrooms including a vast master bedroom with en suite bath and two walk-in closets. Spacious attic recreation room with bathroom, great for extra entertainment space. Covered patio for cozy evenings dining or lounging outdoors.',
     sqft: '4,789 SQFT.',
     images: [],
+    loc: 'lashibi',
     family: 'single family',
     amenities:
       'Air conditioning,Cooker,Fans,Garden Garage, Annexe (Boys quarter),Water reservoir,Swimming pool',
   },
   {
     id: '007',
+    type: 'buy',
     estate: 'north celebraties Estate',
     HouseNo: '001',
     status: 'completed',
-    type: 'buy',
     price: '1,550,000',
     bed: 5,
     bath: 4,
@@ -134,16 +138,17 @@ const dataList = [
       'Spacious three-story home with open-plan living spaces, perfect for large households. Five bedrooms and 4.5 bathrooms, including a main floor guest suite and upper floor en suite. Main floor with open-plan living room, dining room, and kitchen areas, mud room, tech zone, and pantry for additional storage. Second floor with four bedrooms including a vast master bedroom with en suite bath and two walk-in closets. Spacious attic recreation room with bathroom, great for extra entertainment space. Covered patio for cozy evenings dining or lounging outdoors.',
     sqft: '3,000 SQFT.',
     images: [],
+    loc: 'lashibi',
     family: 'single family',
     amenities:
       'Air conditioning,Cooker,Fans,Garden Garage, Annexe (Boys quarter),Water reservoir,Swimming pool',
   },
   {
     id: '008',
+    type: 'sell',
     estate: 'north celebraties Estate',
     HouseNo: '001',
     status: 'uncompleted',
-    type: 'buy',
     price: '2,500,000',
     bed: 2,
     bath: 3,
@@ -153,67 +158,29 @@ const dataList = [
       'Spacious three-story home with open-plan living spaces, perfect for large households. Five bedrooms and 4.5 bathrooms, including a main floor guest suite and upper floor en suite. Main floor with open-plan living room, dining room, and kitchen areas, mud room, tech zone, and pantry for additional storage. Second floor with four bedrooms including a vast master bedroom with en suite bath and two walk-in closets. Spacious attic recreation room with bathroom, great for extra entertainment space. Covered patio for cozy evenings dining or lounging outdoors.',
     sqft: '5,000 SQFT.',
     images: [],
+    loc: 'lashibi',
+    family: 'single family',
     amenities:
       'Air conditioning,Cooker,Fans,Garden Garage, Annexe (Boys quarter),Water reservoir,Swimming pool',
   },
 ]
 
-const options = [
-  { value: '100,000', label: 'Gh100k' },
-  { value: '250,000', label: 'Gh250k' },
-  { value: '500,000', label: 'Gh500k' },
-  { value: '750,000', label: 'Gh750k' },
-  { value: '1,000,000', label: 'Gh1M' },
-]
-const ProOptions = [
-  { value: 'any', label: 'Any' },
-  { value: 'house', label: 'House' },
-  { value: 'condo', label: 'Condo' },
-  { value: 'townhome', label: 'TownHome' },
-  { value: 'fulti family', label: 'Multi-family' },
-  { value: 'mobile', label: 'Mobile' },
-  { value: 'land', label: 'Land' },
-]
+function BuyHomesSearch() {
+  const params = useParams()
+  const loc = params.location
 
-const Main = styled.main`
-  padding: 2rem 6rem;
-`
+  const search = dataList.filter((data) => data.loc === loc)
+  if (search.length === 0) return <p>No homes found with this search result</p>
 
-const FormBox = styled.div`
-  padding: 1rem 2rem;
-  /* background-color: red; */
-
-  display: flex;
-  justify-content: space-between;
-`
-const MapBox = styled.div`
-  flex-basis: 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`
-function Buy() {
   return (
-    <Main>
-      <FormBox>
-        <Form>
-          <Input type="search" placeholder="Accra Ac" />
-          <Select options={options} />
-          <Select options={ProOptions} />
-        </Form>
-        <MapBox>
-          <div>list</div>
-          <div>map</div>
-        </MapBox>
-      </FormBox>
-
+    <main>
       <CardContainer>
-        {dataList.map((item) => (
+        {search.map((item) => (
           <HomesCard key={item.id} item={item} />
         ))}
       </CardContainer>
-    </Main>
+    </main>
   )
 }
 
-export default Buy
+export default BuyHomesSearch
